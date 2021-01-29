@@ -17,15 +17,14 @@ function setup() {
   atualizar_desenho(); 
   noFill();
   strokeWeight(1);
-  shuffle(paleta, true);
 }
 
 function draw() {
-  background(paleta[0]);
+  background(paleta[1]);
 
-  stroke(paleta[1]);
-  desenhos[0].desenhar();
   stroke(paleta[2]);
+  desenhos[0].desenhar();
+  stroke(paleta[0]);
   desenhos[1].desenhar();
 }
 
@@ -36,10 +35,10 @@ function atualizar_desenho() {
     if(sorteio > 0.5) {
       desenhos[i] = new Onda(random(10, 100), 5, 10, random(0.01, 0.3), 0.01);
     } else {
-      desenhos[i] = new Circulo(createVector(random(width/2), 0), 1000, 100, 0.01);
+      desenhos[i] = new Circulo(createVector(random(width/2), 0), 2000, 100, 0.01);
     }
   };
-  shuffle(paleta, true);
+  // shuffle(paleta, true);
 
 }
 
